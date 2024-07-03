@@ -1,0 +1,89 @@
+body {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: unset !important;
+    color: rgb(255, 255, 255);
+    background: black;
+}
+
+h2, h1 {
+    font-family: monospace;
+    font-size: 30px;
+}
+
+header, footer {
+    align-items: center;
+    text-align: center;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    transition: color 0.5s;
+    color: red;
+}
+
+pre {
+    border: 1px solid rgba(255, 255, 255, 0.555);
+    padding: 7px;
+    word-wrap: normal;
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+.container-main {
+    max-width: 45rem;
+    padding-left: var(--spacer-2);
+    padding-right: var(--spacer-2);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 1200px) {
+    .container-main {
+        width: 1207px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container-main {
+        width: 1207px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container-main {
+        width: 1207px;
+    }
+}
+
+.main {
+    padding: 7px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.ascii-art {
+    text-align: center;
+    position: relative;
+    top: -50%;
+    white-space: pre;
+    color: red;
+}
+
+.apresent {
+    text-align: center;
+    margin-top: 1px;
+    white-space: pre-wrap;
+    color: #ff0000;
+    font-size: 1.2em;
+    line-height: 1.5;
+    font-family: 'Courier New', Courier, monospace;
+}
+
