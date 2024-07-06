@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/basepaper.css">
+    <title>MathRocket</title>
+    <style>
+        body {
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 40px;
+            font-family: monospace;
+            font-size: 12px;
+            line-height: unset !important;
+            color: rgb(255, 255, 255);
+            background: black;
+        }
+
+        h1, h2, h3 {
+            color: red;
+            font-family: monospace;
+            font-size: 30px;
+        }
+
+        header, footer {
+            text-align: center;
+        }
+
+        a {
+            color: white;
+        }
+
+        a:hover {
+            transition: color 0.5s;
+            color: red;
+        }
+
+        pre {
+            border: 1px solid rgba(255, 255, 255, 0.555);
+            padding: 0 7px;
+            overflow: auto;
+        }
+
+        .main {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Biblioteca MathRocket</h1>
+        <p>Documentação oficial</p>
+        <p>      by unoxys          </p>
+    </header>
+
+    <section class="main">
+        <h2>O que é MathRocket?</h2>
+        <p>MathRocket é uma biblioteca Python projetada para facilitar a simulação e o cálculo de trajetórias de foguetes. Ela oferece métodos para calcular dinamicamente características essenciais de foguetes como massa, empuxo e tempo de queima, sendo ideal para análises de desempenho de lançamentos, estudos de física aplicada e simulações educacionais.</p>
+
+        <h2>Instalando a Biblioteca</h2>
+        <p>Para instalar a Biblioteca MathRocket, execute o seguinte comando no Terminal:</p>
+        <pre><code>pip install MathRocket</code></pre>
+
+        <h2>Importando Módulos</h2>
+        <p>Importe as seguintes classes da MathRocket no seu código Python:</p>
+        <pre><code>
+from MathRocket.physics import Rocket
+from MathRocket.trajectory import Trajectory
+from MathRocket.visualization import Visualization
+        </code></pre>
+
+        <h2>Simulando um Foguete</h2>
+        <p>Aqui está um exemplo de como você pode simular e visualizar a trajetória de um foguete:</p>
+        <pre><code>
+# Criar uma instância de Rocket
+rocket = Rocket(mass=1000, thrust=500, burn_time=10)
+
+# Simular a trajetória do foguete
+trajectory = Trajectory.simulate(rocket)
+
+# Visualizar a trajetória simulada
+Visualization.plot_trajectory(trajectory.range, trajectory.flight_time, trajectory.details)
+        </code></pre>
+
+        <h2>Outra forma de Visualização Também seria:</h2>
+        <pre><code>
+            print(f"Massa do foguete: {rocket.get_mass()} kg")
+            print(f"Empuxo do foguete: {rocket.get_thrust()} N")
+            print(f"Tempo de queima do foguete: {rocket.get_burn_time()} s")
+
+            print(f"Aceleração do foguete: {rocket.acceleration()} m/s²")
+
+            print(f"Impulso total do foguete: {rocket.impulse()} Ns")
+        </code></pre>
+
+        <h2>Contribuindo</h2>
+        <p><a href="https://pypi.org/project/MathRocket/0.1/" target="_blank">MathRocket PyPi/a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 MathRocket. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
