@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/basepaper.css">
+    <title>Tipos de Microcontroladores</title>
+    <style>
+        body {
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 40px;
+            font-family: monospace;
+            font-size: 12px;
+            line-height: unset !important;
+            color: rgb(255, 255, 255);
+            background: black;
+        }
+
+        h1, h2, h3 {
+            color: red;
+            font-family: monospace;
+            font-size: 30px;
+        }
+
+        header, footer {
+            text-align: center;
+        }
+
+        a {
+            color: white;
+        }
+
+        a:hover {
+            transition: color 0.5s;
+            color: red;
+        }
+
+        pre {
+            border: 1px solid rgba(255, 255, 255, 0.555);
+            padding: 0 7px;
+            overflow: auto;
+        }
+
+        .main {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <pre>
+            _________        .---"""      """---.              
+            :______.-':      :  .--------------.  :             
+            | ______  |      | :                : |             
+            |:______B:|      | |  Little Error: | |             
+            |:______B:|      | |                | |             
+            |:______B:|      | |  Power not     | |             
+            |         |      | |  found.        | |             
+            |:_____:  |      | |                | |             
+            |    ==   |      | :                : |             
+            |       O |      :  '--------------'  :             
+            |       o |      :'---...______...---'              
+            |       o |-._.-i___/'             \._              
+            |'-.____o_|   '-.   '-...______...-'  `-._          
+            :_________:      `.____________________   `-.___.-. 
+                             .'.eeeeeeeeeeeeeeeeee.'.      :___:
+                fsc        .'.eeeeeeeeeeeeeeeeeeeeee.'.         
+                          :____________________________:        
+                                                          
+        </pre>
+        <h1>Tipos de Microcontroladores</h1>
+        <p>Antes de começar o artigo, recomendo que você leia um artigo ou o meu, que explica o que são microcontroladores.</p>
+
+        <p>Bem, dando uma resumida, microcontroladores são minicomputadores embalados em um chip de circuito integrado.</p>
+
+        <h3>1. Arduino Uno</h3>
+        <img src="https://www.researchgate.net/profile/Samarjith-Biswas/publication/325115625/figure/fig3/AS:625887674380289@1526234658056/Arduino-UNO-The-Arduino-program-contains-two-main-parts-setup-and-loop-The-name.png" alt="Arduino Uno">
+
+        <p>O Arduino Uno é um hardware de desenvolvimento baseado no microcontrolador ATmega328P da empresa Atmel, projetado para profissionais e estudantes criarem dispositivos eletrônicos.</p>
+
+        <p>A programação dele é baseada em C/C++ na Arduino IDE.</p>
+
+        <p>Ele possui uma memória flash de 32 KB (kilobytes), onde 0,5 KB é usada pelo bootloader. A memória flash é utilizada para armazenar o código do programa (o sketch) que você carrega no hardware.</p>
+
+        <p>Ele também possui uma memória SRAM (Static RAM) de 2 KB, que é usada para armazenar variáveis e dados temporários.</p>
+
+        <p>E sem contar a EEPROM (Electrically Erasable Programmable Read-Only Memory) de 1 KB, que pode ser usada para armazenar dados que precisam ser mantidos entre reinicializações da placa. A EEPROM é ideal para armazenar configurações ou outros dados que você não quer perder quando o hardware é desligado.</p>
+
+        <h3>2. ESP8266</h3>
+        <img src="https://eazytronic.com/wp-content/uploads/2022/09/esp8266-pinout-1024x723.png" alt="ESP8266">
+
+        <p>O ESP8266 é um microcontrolador que ganhou popularidade devido à sua capacidade de se conectar a redes Wi-Fi, tornando-o ideal para projetos de Internet das Coisas (IoT).</p>
+
+        <p>Ele possui um processador de 32 bits baseado no núcleo Tensilica Xtensa LX106, rodando a 80 MHz (podendo ser overclockado para 160 MHz), com 64 KB de RAM para dados e 96 KB de RAM para instruções.</p>
+
+        <p>Além disso, o ESP8266 conta com 4 MB de memória flash, usada para armazenar o firmware e programas.</p>
+
+        <p>É programável em diversas linguagens, como Lua, MicroPython e Arduino (C/C++).</p>
+
+        <h3>3. Raspberry Pi Pico</h3>
+        <img src="https://brotherscr.com/wp-content/uploads/2021/03/raspberry-pi-pico.jpg" alt="Raspberry Pi Pico">
+
+        <p>O Raspberry Pi Pico é um microcontrolador lançado pela fundação Raspberry Pi. Ele utiliza o microcontrolador RP2040, projetado especificamente para esse hardware.</p>
+
+        <p>O RP2040 possui um processador dual-core ARM Cortex-M0+ rodando a 133 MHz, 264 KB de SRAM e 2 MB de memória flash embutida.</p>
+
+        <p>Uma das características mais notáveis do Raspberry Pi Pico é o suporte a uma vasta gama de interfaces de E/S, incluindo 26 pinos GPIO, interfaces I2C, SPI, UART, e ADCs, o que o torna uma escolha versátil para projetos variados.</p>
+
+        <p>O Raspberry Pi Pico pode ser programado utilizando MicroPython, C/C++, ou mesmo em linguagem assembly para operações mais avançadas.</p>
+
+        <h3>4. STM32F103C8T6 (Blue Pill)</h3>
+        <img src="https://temperosystems.com.au/wp-content/uploads/2021/02/STM32F103C8T6-ARM-01.jpg" alt="STM32F103C8T6">
+h
+        <p>O STM32F103C8T6, popularmente conhecido como "Blue Pill", é um microcontrolador da família STM32, baseada no núcleo ARM Cortex-M3, com clock de até 72 MHz.</p>
+
+        <p>Ele possui 64 KB de memória flash, 20 KB de SRAM e diversas interfaces de comunicação, como USB, I2C, SPI, UART, e CAN.</p>
+
+        <p>O "Blue Pill" é bastante utilizado em projetos onde se precisa de maior poder de processamento em comparação com microcontroladores mais simples, como o Arduino.</p>
+
+        <p>Ele pode ser programado em C/C++ utilizando o ambiente de desenvolvimento STM32CubeIDE, ou através de ferramentas de código aberto como o PlatformIO.</p>
+
+        <footer>
+            <p>by3!</p>
+        </footer>
+    </div>
+</body>
+</html>
